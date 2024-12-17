@@ -40,8 +40,6 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const User = mongoose.model("User", userSchema);
-
 // Pre-save hook to hash pw before saving to db
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
@@ -59,5 +57,7 @@ userSchema.pre("save", async function (next) {
 userSchema.methods.comparePassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
+
+const User = mongoose.model("User", userSchema);
 
 export default User;
