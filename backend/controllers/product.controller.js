@@ -98,7 +98,7 @@ const getRecommendedProducts = async (req, res) => {
   try {
     // Get 3 random products
     const products = await Product.aggregate([
-      { $sample: { size: 3 } },
+      { $sample: { size: 3 } }, // Randomly select 3 documents
       { $project: { _id: 1, name: 1, description: 1, price: 1, image: 1 } }, // The number 1 indicates that the field should be included, while 0 would exclude the field.
     ]);
 
