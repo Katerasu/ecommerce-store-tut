@@ -1,5 +1,5 @@
 import Coupon from "../models/coupon.model.js";
-import { stripe } from "..lib/stripe.js";
+import stripe from "../lib/stripe.js";
 import dotenv from "dotenv";
 import Order from "../models/order.model.js";
 

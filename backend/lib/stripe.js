@@ -3,6 +3,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const stripe = new Stripe(process.env.SCRIPT_SECRET);
+const stripe = new Stripe(process.env.STRIPE_SECRET);
 
 export default stripe;
